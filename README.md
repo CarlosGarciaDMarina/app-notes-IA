@@ -36,6 +36,3 @@ Notas
 - Ver cuadernos disponibles:
   python -m notesorg.cli notebooks
 
-- Frontend web
-  - Ejecuta el servidor API: python -m notesorg.api
-  - Abre en el navegador: http://localhost:5000/
