@@ -1,0 +1,78 @@
+:root {
+  --bg: #0b1020;
+  --card: #1e1f2a;
+  --surface: #141a2b;
+  --primary: #6d83ff;
+  --text: #e8eaf6;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+  color: var(--text);
+  background: linear-gradient(135deg, #0f1020 0%, #1a1e2b 60%, #1f2a43 100%);
+  min-height: 100vh;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+}
+.header {
+  text-align: center;
+  padding: 22px 0 12px;
+  border-radius: 12px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(109,131,255,0.25), rgba(30,32,54,0.25));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.header h1 { margin: 0; font-size: 2.1rem; letter-spacing: 0.5px; }
+.header p { margin: 6px 0 0; color: #d9e1ff; }
+.panel {
+  background: rgba(20,26,46,0.9);
+  border-radius: 14px;
+  padding: 18px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.panel h2 { margin: 0 0 10px 0; color: #fff; }
+.field { margin: 8px 0; display: grid; grid-template-columns: 180px 1fr; gap: 12px; align-items: center; }
+.field label { font-weight: 600; color: #e7e7f7; }
+input, textarea, select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2a2f57; background: #1b1f3a; color: #e8eaff; }
+button { padding: 10px 14px; border: none; border-radius: 8px; background: linear-gradient(135deg, #5b7dff 0%, #7a5cff 100%); color: #fff; cursor: pointer; font-weight: 600; }
+button:hover { filter: brightness(1.05); }
+.note-card { border: 1px solid #2a2f57; border-radius: 8px; padding: 10px; margin: 8px 0; background: rgba(255,255,255,0.05); color: #eef; }
+.note-header { display: flex; justify-content: space-between; align-items: baseline; }
+.note-meta { color: #cbd5e1; font-size: 12px; }
+.note-content { margin: 6px 0; color: #eaf0ff; }
+.notes { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; width: 100%; }
+.delete-btn { background: #e11d48; }
+
+@media (max-width: 900px) {
+  .field { grid-template-columns: 1fr; }
+}
+
+/* Modal styles for full-note view */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55); align-items: center; justify-content: center; z-index: 1000; }
+.modal-overlay.show { display: flex; }
+.modal-content { background: #141a2b; color: #e8eaf6; border-radius: 12px; padding: 20px; width: min(720px, 92vw); max-height: 80vh; overflow: auto; box-shadow: 0 8px 40px rgba(0,0,0,.5); }
+.modal-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #2a2f57; padding-bottom: 8px; margin-bottom: 8px; }
+.modal-title { font-weight: 700; text-align: center; flex: 1; }
+.close-btn { background: #8b1a1a; color: #fff; border: none; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.edit-btn { background: linear-gradient(135deg, #6b8f1a 0%, #5a7d13 100%); color: #e9f3dc; border: none; border-radius: 6px; padding: 8px 12px; cursor: pointer; font-weight: 600; }
+.note-card .edit-btn { /* no default, but placeholder to ensure specificity if needed */ }
+.modal-body { padding-top: 6px; }
+
+/* Centering and padding improvements for visual polish */
+html, body { height: 100%; }
+body { display: grid; place-items: center; padding: 20px; }
+.container { width: min(1000px, 92vw); display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
+.panel { padding: 24px; }
+.field { margin: 6px 0; display: flex; flex-direction: column; gap: 8px; }
+.field label { font-weight: 600; }
+.note-card { padding: 12px; }

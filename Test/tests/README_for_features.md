@@ -1,0 +1,2 @@
+- feat/api-di-complete: API con DI completo
+- tests: cobertura API DI + tests de UI

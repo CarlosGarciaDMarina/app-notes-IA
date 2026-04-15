@@ -1,0 +1,19 @@
+# Note: simplified pyproject for setuptools-based packaging
+# Minimal project metadata for note organizer prototype. We keep it lightweight and self-contained.
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "notesorg"
+version = "0.1.0"
+description = "Notes organizer: collect, tag, notebook, and search notes via a simple JSON backend."
+authors = [ { name = "OpenCode", email = "noreply@example.com" } ]
+readme = "README.md"
+requires-python = ">=3.8"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

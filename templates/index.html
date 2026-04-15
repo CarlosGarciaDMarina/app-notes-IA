@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NotesOrg - Frontend</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>NotesOrg</h1>
+        <p>Notas, cuadernos y etiquetas - interfaz mínima</p>
+      </header>
+
+      <section class="panel" id="formPanel">
+        <h2>Nueva nota</h2>
+        <form id="noteForm">
+          <div class="field">
+            <label for="title">Título</label>
+            <input id="title" name="title" required />
+          </div>
+          <div class="field">
+            <label for="content">Contenido</label>
+            <textarea id="content" name="content" rows="4" required></textarea>
+          </div>
+          <div class="field">
+            <label for="notebook">Cuaderno</label>
+            <input id="notebook" name="notebook" />
+          </div>
+          <div class="field">
+            <label for="tags">Etiquetas (coma separadas)</label>
+            <input id="tags" name="tags" />
+          </div>
+          <button type="submit">Agregar nota</button>
+        </form>
+      </section>
+
+      <section class="panel" id="filters">
+        <h2>Filtro</h2>
+        <div class="field">
+          <label for="notebookFilter">Cuaderno</label>
+          <select id="notebookFilter"><option value="">Todos</option></select>
+        </div>
+        <div class="field">
+          <label for="tagFilter">Etiqueta</label>
+          <input id="tagFilter" placeholder="buscar por etiqueta" />
+        </div>
+        <button id="applyFilters">Aplicar</button>
+      </section>
+
+      <section class="panel" id="notesPanel">
+        <h2>Notas</h2>
+        <div id="notesList" class="notes"></div>
+      </section>
+    </div>
+    <script src="/static/js/app.js"></script>
+  </body>
+  </html>
